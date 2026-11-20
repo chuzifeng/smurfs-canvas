@@ -3,52 +3,184 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="蓝精灵画布 —— 一块画布，从文字到成片。AI 短剧 / 漫剧创作桌面软件，本地运行，免费使用。">
 <title>蓝精灵画布 · 从文字到成片</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="siteHeader">
-  <div class="wrap">
-    <a class="brand" href="#top">蓝精灵画布</a>
-    <nav class="siteNav">
+
+<!-- 背景光晕 -->
+<div class="bg-glow" aria-hidden="true"></div>
+
+<!-- 导航 -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="brand-mark">✦</span> 蓝精灵画布</a>
+    <nav class="nav-links" id="navLinks">
       <a href="#features">功能</a>
+      <a href="#flow">创作流程</a>
       <a href="#download">下载</a>
-      <a href="https://github.com/chuzifeng/smurfs-canvas" target="_blank">GitHub</a>
+      <a href="https://github.com/chuzifeng/smurfs-canvas" target="_blank" rel="noopener">GitHub</a>
     </nav>
+    <a class="btn btn-sm btn-primary nav-cta" href="#download">免费下载</a>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
   </div>
 </header>
 
 <main>
-<section class="hero">
-  <h1>蓝精灵画布</h1>
-  <p class="tagline">一块画布，从文字到成片</p>
-  <div class="cta">
-    <a class="btn primary" href="#download">下载 Windows 版</a>
-    <a class="btn ghost" href="#download">下载 macOS 版</a>
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="pill"><span class="pill-dot"></span> AI 短剧 / 漫剧创作桌面软件</span>
+      <h1>一块画布，<br><span class="gradient-text">从文字到成片</span></h1>
+      <p class="lead">把脑海里的故事变成画面。写剧本、分镜、出图、成片——在一块画布上完成，本地运行，创作不假手于云端。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="#download">⬇ 下载 Windows 版</a>
+        <a class="btn btn-ghost btn-lg" href="#features">了解功能 →</a>
+      </div>
+      <p class="hero-note">✓ 免费使用　✓ 本地运行　✓ 无需注册登录</p>
+    </div>
+    <div class="hero-visual">
+      <div class="app-window">
+        <div class="app-titlebar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="app-title">蓝精灵画布</span>
+          <span class="app-title-spacer"></span>
+        </div>
+        <div class="app-body">
+          <aside class="app-sidebar">
+            <span class="side-logo">✦</span>
+            <span class="side-item active">▦</span>
+            <span class="side-item">▤</span>
+            <span class="side-item">◈</span>
+            <span class="side-item">⚙</span>
+          </aside>
+          <div class="app-canvas">
+            <div class="canvas-head"><span class="canvas-tab active">分镜画布</span><span class="canvas-tab">角色资产</span><span class="canvas-tab">场景</span></div>
+            <div class="canvas-grid">
+              <div class="story-card"><div class="thumb t1"></div><span class="shot-label">镜头 01</span></div>
+              <div class="story-card"><div class="thumb t2"></div><span class="shot-label">镜头 02</span></div>
+              <div class="story-card"><div class="thumb t3"></div><span class="shot-label">镜头 03</span></div>
+              <div class="story-card add"><span class="plus">＋</span><span class="shot-label">添加镜头</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="float-chip chip-1">🎬 一键成片</div>
+      <div class="float-chip chip-2">🎨 AI 出图</div>
+    </div>
   </div>
 </section>
 
+<!-- 功能 -->
 <section class="features" id="features">
-  <h2>核心功能</h2>
-  <div class="grid">
-    <div class="card"><h3>AI 创作</h3><p>从文字到成片，一站式完成。</p></div>
-    <div class="card"><h3>跨平台</h3><p>Windows / macOS / Linux 桌面端。</p></div>
-    <div class="card"><h3>离线使用</h3><p>本地运行，无需服务器。</p></div>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">核心能力</span>
+      <h2>从灵感到成片，一站完成</h2>
+      <p>为 AI 短剧、漫剧创作者打造的一体化工作台</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✍️</div>
+        <h3>剧本到分镜</h3>
+        <p>把文字剧本拆解成可视化分镜，故事节奏一目了然。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🖼️</div>
+        <h3>AI 智能出图</h3>
+        <p>角色、场景、关键帧一站式生成，风格统一不跑偏。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎬</div>
+        <h3>图生视频</h3>
+        <p>关键帧一键生成动态镜头，静态画面动起来。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧩</div>
+        <h3>画布式编排</h3>
+        <p>像搭积木一样组织镜头，拖拽调整、自由串联。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>本地运行</h3>
+        <p>数据留在自己的电脑，创作过程不上传云端。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🆓</div>
+        <h3>免费使用</h3>
+        <p>无需注册登录，下载即可开始创作。</p>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- 创作流程 -->
+<section class="flow" id="flow">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">创作流程</span>
+      <h2>四步，把故事变成作品</h2>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-step"><span class="step-num">01</span><h3>写剧本</h3><p>输入你的故事文本</p></div>
+      <div class="flow-step"><span class="step-num">02</span><h3>拆分镜</h3><p>生成可视化镜头序列</p></div>
+      <div class="flow-step"><span class="step-num">03</span><h3>出画面</h3><p>AI 生成角色与场景图</p></div>
+      <div class="flow-step"><span class="step-num">04</span><h3>成片</h3><p>合成镜头导出视频</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 下载 -->
 <section class="download" id="download">
-  <h2>下载</h2>
-  <div class="btns">
-    <a class="btn primary" href="https://gh-proxy.org/https://github.com/chuzifeng/smurfs-canvas/releases/latest/download/蓝精灵画布-Setup.exe" target="_blank">⬇ Windows x64</a>
-    <a class="btn ghost" href="https://gh-proxy.org/https://github.com/chuzifeng/smurfs-canvas/releases/latest/download/蓝精灵画布.dmg" target="_blank">⬇ macOS</a>
-    <a class="btn ghost" href="https://gh-proxy.org/https://github.com/chuzifeng/smurfs-canvas/releases/latest/download/蓝精灵画布.AppImage" target="_blank">⬇ Linux</a>
+  <div class="wrap download-inner">
+    <div class="section-head">
+      <span class="eyebrow">立即开始</span>
+      <h2>下载蓝精灵画布</h2>
+      <p>选择适合你的平台，免费下载安装</p>
+    </div>
+    <div class="download-grid">
+      <a class="dl-card primary" href="https://github.com/chuzifeng/smurfs-canvas/releases/latest/download/v1.9.2-Setup.exe" target="_blank" rel="noopener">
+        <span class="dl-icon">⊞</span>
+        <strong>Windows</strong>
+        <span class="dl-sub">x64 · 安装包</span>
+        <span class="dl-btn">下载 .exe</span>
+      </a>
+      <div class="dl-card soon">
+        <span class="dl-icon">◈</span>
+        <strong>macOS</strong>
+        <span class="dl-sub">即将推出</span>
+        <span class="dl-btn">敬请期待</span>
+      </div>
+      <div class="dl-card soon">
+        <span class="dl-icon">⬡</span>
+        <strong>Linux</strong>
+        <span class="dl-sub">即将推出</span>
+        <span class="dl-btn">敬请期待</span>
+      </div>
+    </div>
+    <p class="download-tip">下载慢？把链接里的 <code>github.com</code> 换成 <code>gh-proxy.com/github.com</code> 可加速</p>
   </div>
 </section>
 </main>
 
-<footer>
-<p>© 2026 子风工作室 · <a href="https://github.com/chuzifeng/smurfs-canvas">源码</a></p>
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand"><span class="brand-mark">✦</span> 蓝精灵画布 <span class="footer-year">© 2026 子风工作室</span></div>
+    <div class="footer-links">
+      <a href="https://github.com/chuzifeng/smurfs-canvas" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/chuzifeng/smurfs-canvas/releases" target="_blank" rel="noopener">更新日志</a>
+      <a href="#top">回到顶部 ↑</a>
+    </div>
+  </div>
 </footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle && toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
 </body>
 </html>
