@@ -1,0 +1,19 @@
+:root { --bg:#fafafa; --fg:#111; --accent:#7c3aed; --muted:#666; --card:#fff; --border:#e5e5e5; }
+*{box-sizing:border-box;margin:0;padding:0} body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
+a{color:var(--accent)} .siteHeader{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg)}
+.brand{font-weight:700;font-size:1.25rem} .siteNav a{margin-left:1.5rem}
+main{max-width:960px;margin:0 auto;padding:3rem 1.5rem}
+.hero{text-align:center;padding:4rem 0} .hero h1{font-size:3rem;font-weight:800;margin-bottom:1rem} .tagline{font-size:1.25rem;color:var(--muted);margin-bottom:2rem}
+.cta{display:flex;gap:1rem;justify-content:center} .btn{display:inline-block;padding:.8rem 1.5rem;border-radius:8px;font-weight:600;text-decoration:none;transition:.15s}
+.btn.primary{background:var(--accent);color:#fff} .btn.ghost{background:transparent;border:1px solid var(--border);color:var(--fg)}
+section{margin-top:4rem} h2{font-size:1.8rem;margin-bottom:1.5rem;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.card{background:var(--card);border:1px solid var(--border);padding:1.5rem;border-radius:12px}
+.download{text-align:center} .download .btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+footer{text-align:center;padding:2rem;color:var(--muted);border-top:1px solid var(--border);margin-top:4rem}
+
+@media (max-width:600px){
+  .siteHeader{flex-direction:column;gap:.5rem}
+  .siteNav a{margin:0 .6rem}
+  .hero h1{font-size:2.2rem}
+}

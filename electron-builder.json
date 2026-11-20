@@ -1,0 +1,35 @@
+{
+  "appId": "com.lansijing.canvas",
+  "productName": "蓝精灵画布",
+  "copyright": "© 2026 子风工作室",
+  "directories": {
+    "output": "release",
+    "buildResources": "build"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/**/*"
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ]
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "perMachine": false,
+    "artifactName": "蓝精灵画布-Setup.exe"
+  },
+  "mac": {
+    "target": ["dmg"],
+    "artifactName": "蓝精灵画布.dmg"
+  },
+  "linux": {
+    "target": ["AppImage"],
+    "artifactName": "蓝精灵画布.AppImage"
+  }
+}

@@ -1,0 +1,84 @@
+name: Release Build
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install
+      - run: bun run build:win
+      - uses: actions/upload-artifact@v4
+        with:
+          name: win-x64
+          path: release/*.exe
+          retention-days: 1
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install
+      - run: bun run build:mac
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mac-universal
+          path: release/*.dmg
+          retention-days: 1
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install
+      - run: bun run build:linux
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-x64
+          path: release/*.AppImage
+          retention-days: 1
+
+  create-release:
+    needs: [build-windows, build-macos, build-linux]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          body: |
+            ## 下载地址
+
+            - Windows x64: [蓝精灵画布-Setup.exe](${{ github.repository_url }}/releases/latest/download/蓝精灵画布-Setup.exe)
+            - macOS: [蓝精灵画布.dmg](${{ github.repository_url }}/releases/latest/download/蓝精灵画布.dmg)
+            - Linux: [蓝精灵画布.AppImage](${{ github.repository_url }}/releases/latest/download/蓝精灵画布.AppImage)
+
+            ## 国内加速下载
+
+            把上面链接前缀 `https://github.com/` 改成 `https://gh-proxy.org/` 即可高速下载。
+
+          files: |
+            artifacts/win-x64/*.exe
+            artifacts/mac-universal/*.dmg
+            artifacts/linux-x64/*.AppImage
+          draft: false
+          prerelease: false
